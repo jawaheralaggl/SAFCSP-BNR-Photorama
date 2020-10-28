@@ -21,9 +21,15 @@ class PhotoStore {
         return URLSession(configuration: config)
     }()
     
-    // Web service request
-    func fetchInterestingPhotos(completion: @escaping (Result<[Photo], Error>) -> Void) {
-        let url = FlickrAPI.interestingPhotosURL
+    // Web service request, Silver Challenge
+    func fetchPhotos(of type: PhotoType, completion: @escaping (Result<[Photo], Error>) -> Void) {
+        let url: URL
+        if type == .interesting {
+            url = FlickrAPI.interestingPhotosURL
+        } else {
+            url = FlickrAPI.recentPhotosURL
+        }
+        
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) {
             (data, response, error) in
@@ -33,10 +39,18 @@ class PhotoStore {
             OperationQueue.main.addOperation {
                 completion(result)
             }
+            
+            // Bronze Challenge: Printing the Response Information
+            guard let httpResponse = response as? HTTPURLResponse else {
+                return
+            }
+            print("statusCode: \(httpResponse.statusCode)")
+            print("headerFields: \(httpResponse.allHeaderFields)")
         }
         
         task.resume()
     }
+    
     
     
     private func processPhotosRequest(data: Data?, error: Error?) -> Result<[Photo], Error> {
@@ -60,6 +74,13 @@ class PhotoStore {
             OperationQueue.main.addOperation {
                 completion(result)
             }
+            
+            // Bronze Challenge: Printing the Response Information
+            guard let httpResponse = response as? HTTPURLResponse else {
+                return
+            }
+            print("statusCode: \(httpResponse.statusCode)")
+            print("headerFields: \(httpResponse.allHeaderFields)")
         }
         
         task.resume()
@@ -79,5 +100,6 @@ class PhotoStore {
         }
         return .success(image)
     }
+    
     
 }
