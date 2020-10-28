@@ -9,6 +9,7 @@ import UIKit
 
 enum EndPoint: String {
     case interestingPhotos = "flickr.interestingness.getList"
+    case recentPhotos = "flickr.photos.getRecent" //Silver Challenge: Fetch Recent Photos from Flickr
 }
 
 // Response structures
@@ -73,6 +74,11 @@ struct FlickrAPI {
         return flickrURL(endPoint: .interestingPhotos, parameters: ["extras": "url_z,date_taken"])
         
     }
+    static var recentPhotosURL: URL {
+        return flickrURL(endPoint: .recentPhotos, parameters: ["extras": "url_z,date_taken"])
+        
+    }
+    
     
     // Decoding the JSON data
     static func photos(fromJSON data: Data) -> Result<[Photo], Error> {
