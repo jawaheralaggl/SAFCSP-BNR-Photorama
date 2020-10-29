@@ -22,3 +22,11 @@ class Photo: Codable {
     }
     
 }
+
+// Defining Photo equality
+extension Photo: Equatable {
+    
+    static func == (lhs: Photo, rhs: Photo) -> Bool {
+        return lhs.photoID == rhs.photoID
+    }
+}
