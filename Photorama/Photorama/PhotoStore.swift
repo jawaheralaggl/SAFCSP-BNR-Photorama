@@ -7,12 +7,10 @@
 
 import UIKit
 
-
 enum PhotoError: Error {
     case imageCreationError
     case missingImageURL
 }
-
 
 class PhotoStore {
     
