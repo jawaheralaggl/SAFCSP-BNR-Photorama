@@ -53,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1496" y="96"/>
+            <point key="canvasLocation" x="141" y="824"/>
         </scene>
         <!--Photorama-->
         <scene sceneID="JxQ-EM-O00">
@@ -65,7 +65,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aQQ-x4-fNA">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.1892916858" green="0.2368665636" blue="0.352758348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="dK3-Zs-QIW">
                                     <size key="itemSize" width="90" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AET-7a-zfa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673.91304347826087" y="803.57142857142856"/>
+            <point key="canvasLocation" x="997" y="75"/>
         </scene>
         <!--Photo Info View Controller-->
         <scene sceneID="lkz-hz-Ru1">
@@ -133,22 +133,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Z6-eN-CMi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Z6-eN-CMi">
+                                <rect key="frame" x="-8" y="88" width="430" height="476"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgj-8n-eBr">
+                                <rect key="frame" x="97" y="642" width="220" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="vxS-Q2-fiY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cbg-Dz-Vac"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.1892916858" green="0.2368665636" blue="0.352758348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cbg-Dz-Vac" firstAttribute="trailing" secondItem="Jgj-8n-eBr" secondAttribute="trailing" constant="97" id="kFe-v1-Aja"/>
+                            <constraint firstItem="cbg-Dz-Vac" firstAttribute="bottom" secondItem="Jgj-8n-eBr" secondAttribute="bottom" constant="120" id="w5G-uP-cxl"/>
+                            <constraint firstItem="Jgj-8n-eBr" firstAttribute="leading" secondItem="cbg-Dz-Vac" secondAttribute="leading" constant="97" id="yrR-mg-6Fe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mlh-XQ-eY1"/>
                     <connections>
+                        <outlet property="dateLebel" destination="Jgj-8n-eBr" id="UKg-1L-6jQ"/>
                         <outlet property="imageView" destination="1Z6-eN-CMi" id="bK5-OA-Fd9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P6D-X2-hC3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="804"/>
+            <point key="canvasLocation" x="997" y="824"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jvv-HD-bgE">
@@ -158,6 +173,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o2c-FC-G3a">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.077963031830000001" green="0.095494456589999999" blue="0.18187624220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

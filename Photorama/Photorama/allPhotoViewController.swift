@@ -18,6 +18,7 @@ class allPhotoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = " "
         
         // Bronze Challenge: Horizontal Scrolling
         let layout = UICollectionViewFlowLayout()
@@ -27,7 +28,6 @@ class allPhotoViewController: UIViewController {
         
         collectionView.dataSource = photoDataSource
         collectionView.delegate = self
-        
         
         store.fetchInterestingPhotos {
             (photosResult) in
